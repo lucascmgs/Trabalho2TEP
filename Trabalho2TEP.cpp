@@ -4,11 +4,11 @@
 using namespace std;
 
 
-long ultimoTriangular = 1;
+long long ultimoTriangular = 1;
 long ultimoNatural = 2;
 
 void IncrementaTriangular(){
-    ultimoTriangular = ultimoTriangular + ultimoNatural;
+    ultimoTriangular += ultimoNatural;
     ultimoNatural++;
     //cout << "Próximo triangular: " << ultimoTriangular << endl;
 
@@ -24,13 +24,12 @@ bool ChecaTriangular(long numero){
     }
 
     while(ultimoTriangular < numero){
-        cout << "itera " << numero << " triangular " << ultimoTriangular << " natural " << ultimoNatural << endl;
+        //cout << "quadrado " << numero << " triangular " << ultimoTriangular << " natural " << ultimoNatural << endl;
         IncrementaTriangular();
         if(numero == ultimoTriangular){
             return true;
         }
     }
-    
     
     return false;
 }
@@ -39,7 +38,7 @@ int main(){
     long i = 1;
     while(true){
         //lembrar de somar impares
-        long quadradoAtual = i*i;
+        long long quadradoAtual = i*i;
         bool ehMagico = ChecaTriangular(quadradoAtual);
         if(ehMagico){
             cout << quadradoAtual << " é magico" << endl;
