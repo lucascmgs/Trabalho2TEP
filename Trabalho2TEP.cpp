@@ -38,6 +38,7 @@ bool ChecaTriangular(long numero){
 int main(){
     long i = 1;
     while(true){
+        //lembrar de somar impares
         long quadradoAtual = i*i;
         bool ehMagico = ChecaTriangular(quadradoAtual);
         if(ehMagico){
