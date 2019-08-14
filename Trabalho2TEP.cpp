@@ -10,8 +10,6 @@ long ultimoNatural = 2;
 void IncrementaTriangular(){
     ultimoTriangular += ultimoNatural;
     ultimoNatural++;
-    //cout << "Próximo triangular: " << ultimoTriangular << endl;
-
 }
 
 bool ChecaTriangular(long numero){
@@ -24,7 +22,6 @@ bool ChecaTriangular(long numero){
     }
 
     while(ultimoTriangular < numero){
-        //cout << "quadrado " << numero << " triangular " << ultimoTriangular << " natural " << ultimoNatural << endl;
         IncrementaTriangular();
         if(numero == ultimoTriangular){
             return true;
@@ -35,15 +32,15 @@ bool ChecaTriangular(long numero){
 }
 
 int main(){
-    long i = 1;
+    long imparAtual = 1;
+    long quadradoAtual = 1;
     while(true){
-        //lembrar de somar impares
-        long long quadradoAtual = i*i;
         bool ehMagico = ChecaTriangular(quadradoAtual);
         if(ehMagico){
             cout << quadradoAtual << " é magico" << endl;
         }
-        i++;
+        imparAtual += 2;
+        quadradoAtual += imparAtual;
     }
 
     return 0;
